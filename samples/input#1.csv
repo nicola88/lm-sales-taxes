@@ -1,0 +1,4 @@
+name,price,category,imported,quantity
+book,12.49,Book,false,1
+music CD,14.99,Other,false,1
+chocolate bar,0.85,Food,false,1

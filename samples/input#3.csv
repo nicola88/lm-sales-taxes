@@ -1,0 +1,5 @@
+name,price,category,imported,quantity
+bottle of perfume,27.99,other,true,1
+bottle of perfume,18.99,other,false,1
+packet of headache pills,9.75,medical,false,1
+box of imported chocolates,11.25,food,true,1
