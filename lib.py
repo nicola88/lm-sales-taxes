@@ -82,7 +82,7 @@ class Receipt:
     def show(self):
         for purchase in self.purchases:
             print("{} {}: {}".format(
-                purchase.quantity, purchase.product.name, round(purchase.get_price(), 2))
+                purchase.quantity, purchase.product, round(purchase.get_price(), 2))
             )
         print()
         print("Sales Taxes: {}".format(round(self.get_sales_taxes(), 2)))
@@ -93,9 +93,11 @@ class Receipt:
 class App:
 
     @staticmethod
-    def run_simulation(sample_file: str):
-        # TODO Check if file exists
-        with open(sample_file, 'r') as purchase_file:
+    def run_simulation(purchase_file: str):
+        import os
+        if not os.path.exists(purchase_file):
+            raise ValueError("Purchase file not found at", purchase_file)
+        with open(purchase_file, 'r') as purchase_file:
             import csv
             from distutils.util import strtobool
             receipt = Receipt()
