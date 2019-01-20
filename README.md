@@ -68,7 +68,7 @@ Total: 74.68
 ```bash
 git clone https://github.com/nicola88/lm-sales-taxes.git
 cd lm-sales-taxes
-python print-receipt.py
+python print_receipt.py
 ```
 
 The Python script computes sales taxes and total for each sample purchase file found in the _samples_ folder.
