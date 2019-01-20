@@ -93,7 +93,7 @@ class Receipt:
 class App:
 
     @staticmethod
-    def run_simulation(purchase_file: str):
+    def run_simulation(purchase_file: str) -> Receipt:
         import os
         if not os.path.exists(purchase_file):
             raise ValueError("Purchase file not found at", purchase_file)
@@ -111,7 +111,7 @@ class App:
                 quantity = int(row[4])
                 purchase = ProductPurchase(Product(name, price, category, imported), quantity)
                 receipt.add_purchase(purchase)
-            receipt.show()
+            return receipt
 
     @staticmethod
     def round_decimal(amount: Decimal, precision: int = 2, unit: Decimal = Decimal('0.05')) -> Decimal:
