@@ -28,7 +28,7 @@ Input 3:
 - 1 imported bottle of perfume at 27.99
 - 1 bottle of perfume at 18.99
 - 1 packet of headache pills at 9.75
-- 1 box of imported chocolates at 11.25
+- 1 imported box of chocolates at 11.25
 
 ### OUTPUT
 
@@ -61,9 +61,36 @@ Total: 74.68
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.6
 
 ## Usage
 
-### Input data
+```bash
+git clone https://github.com/nicola88/lm-sales-taxes.git
+cd lm-sales-taxes
+python print-receipt.py
+```
 
+The Python script computes sales taxes and total for each sample purchase file found in the _samples_ folder.
+
+The purchase file must be a CSV file with headers and the following columns:
+
+1. `name`: product name
+2. `price`: product price
+3. `category`: product category (admitted values: _book_, _food_, _medical_, _other_)
+4. `imported`: if the product is imported (admitted values: _true_, _false_)
+5. `quantity`: number of items purchased
+
+The receipt is printed on the standard output as follows:
+
+```
+SIMULATION > <filename>
+
+# One line for each product
+<quantity> <product_name>: <product_subtotal_including_taxes>
+
+Sales Taxes: <sales_taxes>
+
+Total: <total>
+
+```
